@@ -7,6 +7,12 @@ Made using
 
 ## Run
 
+Initially, open a terminal and run the following to install dependencies:
+
+```
+composer install --ignore-platform-reqs
+```
+
 Open a terminal and run:
 
 ```
