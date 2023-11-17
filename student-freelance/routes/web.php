@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Employer;
 use App\Models\Posting;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,11 @@ Route::get('/postings', function () {
 Route::get('/posting/{posting}', function (Posting $posting) {
     return view('posting', [
         'posting'=> $posting,
+    ]);
+});
+
+Route::get('/employer/{employer:username}', function (Employer $employer) {
+    return view('employer', [
+        'employer'=> $employer,
     ]);
 });

@@ -18,7 +18,7 @@ class EmployerFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'username' => $this->faker->userName,
+            'username' => $this->faker->username,
             'bio' => $this->faker->paragraph,
         ];
     }

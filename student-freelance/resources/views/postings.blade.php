@@ -12,7 +12,12 @@
                         <a href="/posting/{{ $posting->id }}"> {{ $posting->title }} </a>
                     </h2>
                     {{-- <p>{{ $posting->description }}</p> --}}
-                    <p><strong>Posted by:</strong>  {{ $posting->employer->name }}</p>
+                    <p>
+                        <strong>Posted by:</strong>
+                        <a href="/employer/{{ $posting->employer->username }}">
+                            {{ $posting->employer->name }}
+                        </a>
+                    </p>
                 </div>
                 @if($index !== count($postings) - 1)
                     <hr> <!-- Divider between postings -->
