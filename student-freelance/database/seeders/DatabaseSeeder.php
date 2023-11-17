@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Employer;
 use App\Models\Freelancer;
 use Illuminate\Database\Seeder;
 
@@ -14,5 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Freelancer::factory(10)->create();
+        Employer::factory(10)->create();
     }
 }
