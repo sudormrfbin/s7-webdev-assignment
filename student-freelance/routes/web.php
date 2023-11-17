@@ -44,6 +44,12 @@ Route::get('/employer/{employer:username}', function (Employer $employer) {
     ]);
 });
 
+Route::get('/freelancers', function () {
+    return view('freelancers', [
+        'freelancers'=> Freelancer::all(),
+    ]);
+});
+
 Route::get('/freelancer/{freelancer:username}', function (Freelancer $freelancer) {
     return view('freelancer', [
         'freelancer'=> $freelancer,
