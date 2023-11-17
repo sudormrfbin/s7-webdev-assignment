@@ -15,7 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Freelancer::factory(10)->create();
+        foreach (SeedData::$freelancers as $freelancer) {
+            Freelancer::factory()->create([
+                'name' => $freelancer['name'],
+                'username' => $freelancer['username'],
+                'bio' => $freelancer['bio'],
+            ]);
+        }
+
 
         foreach (SeedData::$softwareCompanies as $company) {
             Employer::factory()->create([
@@ -92,6 +99,34 @@ class SeedData
         [
             'title' => 'Remote SEO Consultant',
             'description' => 'We are looking for a remote SEO consultant to optimize website content and improve search engine rankings. Responsibilities include keyword research, on-page and off-page SEO, and providing recommendations to enhance website visibility and traffic.',
+        ],
+    ];
+
+    static $freelancers = [
+        [
+            'name' => 'Alice Smith',
+            'username' => 'alice_smith',
+            'bio' => 'Alice Smith is a freelance web developer specializing in frontend and backend technologies. With a passion for creating responsive and user-friendly websites, she has worked on numerous projects and loves exploring new frameworks and technologies.',
+        ],
+        [
+            'name' => 'John Doe',
+            'username' => 'john_doe',
+            'bio' => 'John Doe is a versatile freelance graphic designer known for his creativity and attention to detail. He has a broad portfolio spanning digital and print media, delivering unique and engaging designs that exceed client expectations.',
+        ],
+        [
+            'name' => 'Emily Johnson',
+            'username' => 'emily_johnson',
+            'bio' => 'Emily Johnson is a freelance content writer with expertise in various niches. Her writing style is adaptable, and she excels in crafting compelling articles, blog posts, and web content that resonate with audiences.',
+        ],
+        [
+            'name' => 'David Brown',
+            'username' => 'david_brown',
+            'bio' => 'David Brown is a freelance mobile app developer experienced in creating innovative iOS and Android applications. With a focus on user experience, he brings creativity and functionality to every project he undertakes.',
+        ],
+        [
+            'name' => 'Sophia Lee',
+            'username' => 'sophia_lee',
+            'bio' => 'Sophia Lee is a freelance social media manager adept at developing and executing successful social media strategies. She has a keen understanding of audience engagement and leverages various platforms to boost brand visibility.',
         ],
     ];
 }
