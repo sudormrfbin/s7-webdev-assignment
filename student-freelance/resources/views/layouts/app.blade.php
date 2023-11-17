@@ -56,6 +56,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/postings">Browse Jobs</a></li>
+                <li><a href="/employers">Employers</a></li>
                 <!-- Add more navigation links as needed -->
             </ul>
         </nav>

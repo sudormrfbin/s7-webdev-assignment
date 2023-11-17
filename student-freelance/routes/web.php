@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Employer;
+use App\Models\Freelancer;
 use App\Models\Posting;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +32,20 @@ Route::get('/posting/{posting}', function (Posting $posting) {
     ]);
 });
 
+Route::get('/employers', function () {
+    return view('employers', [
+        'employers'=> Employer::all(),
+    ]);
+});
+
 Route::get('/employer/{employer:username}', function (Employer $employer) {
     return view('employer', [
         'employer'=> $employer,
+    ]);
+});
+
+Route::get('/freelancer/{freelancer:username}', function (Freelancer $freelancer) {
+    return view('freelancer', [
+        'freelancer'=> $freelancer,
     ]);
 });
