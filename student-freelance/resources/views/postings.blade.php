@@ -8,7 +8,9 @@
         @if(count($postings) > 0)
             @foreach($postings as $index => $posting)
                 <div class="posting">
-                    <h2>{{ $posting->title }}</h2>
+                    <h2>
+                        <a href="/posting/{{ $posting->id }}"> {{ $posting->title }} </a>
+                    </h2>
                     {{-- <p>{{ $posting->description }}</p> --}}
                     <p><strong>Posted by:</strong>  {{ $posting->employer->name }}</p>
                 </div>

@@ -23,3 +23,9 @@ Route::get('/postings', function () {
         'postings'=> Posting::all(),
     ]);
 });
+
+Route::get('/posting/{posting}', function (Posting $posting) {
+    return view('posting', [
+        'posting'=> $posting,
+    ]);
+});

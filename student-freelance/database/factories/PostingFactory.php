@@ -20,7 +20,7 @@ class PostingFactory extends Factory
         return [
             'employer_id' => Employer::inRandomOrder()->first()->id,
             'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->paragraphs(3, true),
             'budget' => $this->faker->numberBetween(1 ,9) * 10_000,
         ];
     }
