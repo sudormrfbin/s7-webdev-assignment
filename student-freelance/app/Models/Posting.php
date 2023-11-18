@@ -10,7 +10,7 @@ class Posting extends Model
     use HasFactory;
 
     public function employer() {
-        return $this->belongsTo(Employer::class);
+        return $this->belongsTo(User::class);
     }
 
     public function descriptionExcerpt() {

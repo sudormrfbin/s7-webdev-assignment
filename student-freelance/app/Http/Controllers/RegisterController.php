@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
-use App\Models\Freelancer;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -22,21 +21,13 @@ class RegisterController extends Controller
             'password' => 'required|min:7|max:255',
         ]);
 
-        if ($attributes['role'] == 'freelancer') {
-            $user = Freelancer::create([
-                'name' => $attributes['name'],
-                'username' => $attributes['username'],
-                'email' => $attributes['email'],
-                'password' => bcrypt($attributes['password']),
-            ]);
-        } else {
-            $user = Employer::create([
-                'name' => $attributes['name'],
-                'username' => $attributes['username'],
-                'email' => $attributes['email'],
-                'password' => bcrypt($attributes['password']),
-            ]);
-        }
+        $user = User::create([
+            'name' => $attributes['name'],
+            'username' => $attributes['username'],
+            'email' => $attributes['email'],
+            'role' => $attributes['role'],
+            'password' => bcrypt($attributes['password']),
+        ]);
 
         auth()->login($user);
 

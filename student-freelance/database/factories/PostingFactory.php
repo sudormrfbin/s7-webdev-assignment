@@ -2,7 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Employer;
+use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +19,12 @@ class PostingFactory extends Factory
     public function definition(): array
     {
         return [
-            'employer_id' => Employer::inRandomOrder()->first()->id,
+            'employer_id' => User::inRandomOrder()
+                ->where('role', UserRole::Employer)
+                ->first()->id,
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraphs(3, true),
-            'budget' => $this->faker->numberBetween(1 ,9) * 10_000,
+            'budget' => $this->faker->numberBetween(1, 9) * 10_000,
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserRole;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('freelancers', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
@@ -19,6 +20,7 @@ return new class extends Migration
             $table->string('bio')->nullable();
             $table->string('email');
             $table->string('password');
+            $table->enum('role', [UserRole::Freelancer->value, UserRole::Employer->value]);
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('freelancers');
+        Schema::dropIfExists('users');
     }
 };

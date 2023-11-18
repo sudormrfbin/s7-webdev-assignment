@@ -24,7 +24,7 @@ class SessionController extends Controller
             'password' => $attributes['password']
         ];
 
-        if (!auth($attributes['role'])->attempt($credentials)) {
+        if (!auth()->attempt($credentials)) {
             throw ValidationException::withMessages([
                 'password' => 'Your provided credentials could not be verified.'
             ]);

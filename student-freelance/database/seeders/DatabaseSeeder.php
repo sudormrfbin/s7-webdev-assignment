@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Employer;
-use App\Models\Freelancer;
 use App\Models\Posting;
+use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,19 +16,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         foreach (SeedData::$freelancers as $freelancer) {
-            Freelancer::factory()->create([
+            User::factory()->create([
                 'name' => $freelancer['name'],
                 'username' => $freelancer['username'],
                 'bio' => $freelancer['bio'],
+                'role' => UserRole::Freelancer,
             ]);
         }
 
 
         foreach (SeedData::$softwareCompanies as $company) {
-            Employer::factory()->create([
+            User::factory()->create([
                 'name' => $company['name'],
                 'username' => $company['username'],
                 'bio' => $company['bio'],
+                'role' => UserRole::Employer,
             ]);
         }
 

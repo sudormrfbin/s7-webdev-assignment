@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
-use App\Models\Employer;
-use App\Models\Freelancer;
 use App\Models\Posting;
+use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,28 +36,21 @@ Route::get('/posting/{posting}', function (Posting $posting) {
 
 Route::get('/employers', function () {
     return view('employers', [
-        'employers' => Employer::all(),
+        'employers' => User::where('role', UserRole::Employer)->get(),
     ]);
 });
 
-Route::get('/employer/{employer:username}', function (Employer $employer) {
-    return view('employer', [
-        'employer' => $employer,
+Route::get('/user/{user:username}', function (User $user) {
+    return view('user', [
+        'user' => $user,
     ]);
 });
 
 Route::get('/freelancers', function () {
     return view('freelancers', [
-        'freelancers' => Freelancer::all(),
+        'freelancers' => User::where('role', UserRole::Freelancer)->get(),
     ]);
 });
-
-Route::get('/freelancer/{freelancer:username}', function (Freelancer $freelancer) {
-    return view('freelancer', [
-        'freelancer' => $freelancer,
-    ]);
-});
-
 
 Route::get('login', [SessionController::class, 'create'])->middleware(['guest']);
 Route::post('login', [SessionController::class, 'store'])->middleware(['guest']);

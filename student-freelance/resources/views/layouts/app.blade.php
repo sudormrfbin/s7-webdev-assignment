@@ -21,19 +21,19 @@
                 <li><a href="/">Work Freelance</a></li>
             </ul>
             <ul>
-                @auth('freelancer')
-                <li><a href="/postings">Browse Jobs</a></li>
-                @endauth
-
-                @auth('employer')
-                <li><a href="/freelancers">Hire Freelancers</a></li>
+                @auth
+                    @if (auth()->user()->role === 'freelancer')
+                        <li><a href="/postings">Browse Jobs</a></li>
+                    @else
+                        <li><a href="/freelancers">Hire Freelancers</a></li>
+                    @endif
                 @endauth
 
                 @guest
-                <li><a href="/login" role="button" class="outline">Login</a></li>
-                <li><a href="/register" role="button">Register</a></li>
+                    <li><a href="/login" role="button" class="outline">Login</a></li>
+                    <li><a href="/register" role="button">Register</a></li>
                 @else
-                <x-logged-in-user-nav-dropdown />
+                    <x-logged-in-user-nav-dropdown />
                 @endguest
             </ul>
         </nav>
