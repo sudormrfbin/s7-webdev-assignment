@@ -9,7 +9,10 @@ class Employer extends Model
 {
     use HasFactory;
 
-    public function bioExcerpt() {
+    protected $guarded = [];
+
+    public function bioExcerpt()
+    {
         return strtok($this->bio, '.') . '.';
     }
 }

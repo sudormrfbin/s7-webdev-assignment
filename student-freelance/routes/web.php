@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use App\Models\Employer;
 use App\Models\Freelancer;
 use App\Models\Posting;
@@ -61,6 +62,5 @@ Route::get('login', function () {
     return view('login');
 });
 
-Route::get('register', function () {
-    return view('auth.register');
-});
+Route::get('register', [RegisterController::class, 'create']);
+Route::post('register', [RegisterController::class, 'store']);

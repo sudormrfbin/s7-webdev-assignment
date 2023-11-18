@@ -10,22 +10,34 @@
             @csrf
 
             <label for="role">Role</label>
-            <select id="role">
+            <select name="role">
                 <option value="freelancer">Freelancer</option>
                 <option value="employer">Employer</option>
             </select>
 
             <label for="name">Name</label>
-            <input id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+            <input type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+            @error('name')
+            <small><mark>{{ $message }}</mark></small>
+            @enderror
 
             <label for="username">Username</label>
-            <input id="username" type="text" name="username" value="{{ old('username') }}" required autocomplete="username">
+            <input type="text" name="username" value="{{ old('username') }}" required autocomplete="username">
+            @error('username')
+            <small><mark>{{ $message }}</mark></small>
+            @enderror
 
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+            <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+            @error('email')
+            <small><mark>{{ $message }}</mark></small>
+            @enderror
 
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" required autocomplete="new-password">
+            <input type="password" name="password" required autocomplete="new-password">
+            @error('password')
+            <small><mark>{{ $message }}</mark></small>
+            @enderror
 
             {{--
         <label for="password_confirmation">Confirm Password</label>
