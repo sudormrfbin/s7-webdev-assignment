@@ -26,18 +26,20 @@
             <ul>
                 @auth
                     @if (auth()->user()->role === 'freelancer')
-                        <li><a href="/postings">Browse Jobs</a></li>
+                        <li><a role="button" href="/postings">Browse Jobs</a></li>
                     @else
-                        <li><a href="/freelancers">Hire Freelancers</a></li>
+                        <li><a role="button" href="/posting">Create Job Posting</a></li>
                     @endif
                 @endauth
 
                 @guest
                     <li><a href="/login" role="button" class="outline">Login</a></li>
                     <li><a href="/register" role="button">Register</a></li>
-                @else
-                    <x-logged-in-user-nav-dropdown />
                 @endguest
+
+                @auth
+                    <x-logged-in-user-nav-dropdown />
+            @endauth
             </ul>
         </nav>
     </header>

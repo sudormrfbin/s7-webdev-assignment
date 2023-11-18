@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1>List of Job Postings</h1>
+        <h1>Job Postings</h1>
 
         <x-posting-list :postings="$postings"/>
 
