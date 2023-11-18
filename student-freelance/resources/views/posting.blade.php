@@ -18,7 +18,7 @@
             $user = auth()->user();
             $application = $user
                 ->applicationsHistory
-                ->where('posting_id', $posting->id)
+                ->where('id', $posting->id)
                 ->first();
             $didApply = $application !== null;
         ?>
@@ -30,9 +30,9 @@
             <input type="hidden" name="applicant_id" value="{{ auth()->user()->id }}" />
 
             @if ( $didApply )
-                <button type="submit">Apply</button>
-            @else
                 <button type="submit" disabled>Applied</button>
+            @else
+                <button type="submit">Apply</button>
             @endif
 
         </form>
