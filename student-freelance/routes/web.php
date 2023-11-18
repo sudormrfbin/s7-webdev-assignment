@@ -22,36 +22,45 @@ Route::get('/', function () {
 
 Route::get('/postings', function () {
     return view('postings', [
-        'postings'=> Posting::all(),
+        'postings' => Posting::all(),
     ]);
 });
 
 Route::get('/posting/{posting}', function (Posting $posting) {
     return view('posting', [
-        'posting'=> $posting,
+        'posting' => $posting,
     ]);
 });
 
 Route::get('/employers', function () {
     return view('employers', [
-        'employers'=> Employer::all(),
+        'employers' => Employer::all(),
     ]);
 });
 
 Route::get('/employer/{employer:username}', function (Employer $employer) {
     return view('employer', [
-        'employer'=> $employer,
+        'employer' => $employer,
     ]);
 });
 
 Route::get('/freelancers', function () {
     return view('freelancers', [
-        'freelancers'=> Freelancer::all(),
+        'freelancers' => Freelancer::all(),
     ]);
 });
 
 Route::get('/freelancer/{freelancer:username}', function (Freelancer $freelancer) {
     return view('freelancer', [
-        'freelancer'=> $freelancer,
+        'freelancer' => $freelancer,
     ]);
+});
+
+
+Route::get('login', function () {
+    return view('login');
+});
+
+Route::get('register', function () {
+    return view('auth.register');
 });

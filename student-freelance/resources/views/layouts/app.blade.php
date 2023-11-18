@@ -22,13 +22,14 @@
             </ul>
             <ul>
                 <li><a href="/postings">Browse Jobs</a></li>
+                <li><a href="/login" role="button" class="outline">Login</a></li>
+                <li><a href="/register" role="button">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <hr />
 
-    <!-- Content Section -->
     <main class="container">
         @yield('content')
     </main>
