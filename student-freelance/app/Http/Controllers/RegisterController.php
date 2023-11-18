@@ -23,20 +23,22 @@ class RegisterController extends Controller
         ]);
 
         if ($attributes['role'] == 'freelancer') {
-            Freelancer::create([
+            $user = Freelancer::create([
                 'name' => $attributes['name'],
                 'username' => $attributes['username'],
                 'email' => $attributes['email'],
-                'password' => $attributes['password'],
+                'password' => bcrypt($attributes['password']),
             ]);
         } else {
-            Employer::create([
+            $user = Employer::create([
                 'name' => $attributes['name'],
                 'username' => $attributes['username'],
                 'email' => $attributes['email'],
                 'password' => $attributes['password'],
             ]);
         }
+
+        auth()->login($user);
 
         return redirect('/')->with('success', 'Your account has been created.');
     }

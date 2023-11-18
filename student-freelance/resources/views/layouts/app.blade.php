@@ -21,9 +21,25 @@
                 <li><a href="/">Work Freelance</a></li>
             </ul>
             <ul>
+                @auth('freelancer')
                 <li><a href="/postings">Browse Jobs</a></li>
+                @endauth
+
+                @guest
                 <li><a href="/login" role="button" class="outline">Login</a></li>
                 <li><a href="/register" role="button">Register</a></li>
+                @else
+                <li role="list">
+                    <a href="#" aria-haspopup="listbox">{{ auth()->user()->name }}</a>
+                    <ul role="listbox">
+                        <li><a>Dashboard</a></li>
+                        <li><a>Profile</a></li>
+                        <li>
+                            <a href="/logout" style="color: var(--del-color);">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                @endguest
             </ul>
         </nav>
     </header>

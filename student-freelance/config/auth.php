@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'freelancer',
         'passwords' => 'users',
     ],
 
@@ -36,9 +36,13 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'freelancer' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'freelancer',
+        ],
+        'employer' => [
+            'driver' => 'session',
+            'provider' => 'employer',
         ],
     ],
 
@@ -60,15 +64,14 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'freelancer' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Freelancer::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'employer' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Employer::class,
+        ],
     ],
 
     /*

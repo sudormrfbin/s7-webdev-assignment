@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use App\Models\Employer;
 use App\Models\Freelancer;
 use App\Models\Posting;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,9 +60,9 @@ Route::get('/freelancer/{freelancer:username}', function (Freelancer $freelancer
 });
 
 
-Route::get('login', function () {
-    return view('login');
-});
+Route::get('login', [SessionController::class, 'create']);
+Route::post('login', [SessionController::class, 'store']);
+Route::get('logout', [SessionController::class, 'destroy']);
 
 Route::get('register', [RegisterController::class, 'create']);
 Route::post('register', [RegisterController::class, 'store']);
