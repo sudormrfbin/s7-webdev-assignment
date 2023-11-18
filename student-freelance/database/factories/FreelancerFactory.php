@@ -20,6 +20,8 @@ class FreelancerFactory extends Factory
             'name' => $this->faker->name,
             'username' => $this->faker->userName,
             'bio' => $this->faker->paragraph,
+            'email' => $this->faker->email,
+            'password' => $this->faker->password,
         ];
     }
 }

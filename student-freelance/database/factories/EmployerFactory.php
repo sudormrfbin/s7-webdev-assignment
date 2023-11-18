@@ -20,6 +20,8 @@ class EmployerFactory extends Factory
             'name' => $this->faker->name,
             'username' => $this->faker->username,
             'bio' => $this->faker->paragraph,
+            'email' => $this->faker->email,
+            'password' => $this->faker->password,
         ];
     }
 }

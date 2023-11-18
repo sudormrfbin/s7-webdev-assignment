@@ -26,14 +26,14 @@
         </nav>
     </header>
 
-    <hr/>
+    <hr />
 
     <!-- Content Section -->
     <main class="container">
         @yield('content')
     </main>
 
-    <hr/>
+    <hr />
 
     <footer class="container">
         <aside>
@@ -48,4 +48,3 @@
     </footer>
 
 </body>
-
