@@ -34,7 +34,7 @@ class RegisterController extends Controller
                 'name' => $attributes['name'],
                 'username' => $attributes['username'],
                 'email' => $attributes['email'],
-                'password' => $attributes['password'],
+                'password' => bcrypt($attributes['password']),
             ]);
         }
 

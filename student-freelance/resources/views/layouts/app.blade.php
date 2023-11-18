@@ -33,16 +33,7 @@
                 <li><a href="/login" role="button" class="outline">Login</a></li>
                 <li><a href="/register" role="button">Register</a></li>
                 @else
-                <li role="list">
-                    <a href="#" aria-haspopup="listbox">{{ auth()->user()->name }}</a>
-                    <ul role="listbox">
-                        <li><a>Dashboard</a></li>
-                        <li><a>Profile</a></li>
-                        <li>
-                            <a href="/logout" style="color: var(--del-color);">Logout</a>
-                        </li>
-                    </ul>
-                </li>
+                <x-logged-in-user-nav-dropdown />
                 @endguest
             </ul>
         </nav>
