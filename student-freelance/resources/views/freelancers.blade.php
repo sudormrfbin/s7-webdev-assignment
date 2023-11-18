@@ -2,19 +2,20 @@
 
 @section('content')
     <div class="container">
-        <h1>List of Freelancers</h1>
+        <h1>Freelancers</h1>
         @if(count($freelancers) > 0)
             @foreach($freelancers as $index => $freelancer)
-                <div class="freelancer">
-                    <h2>
+                <article>
+                    <h3>
                         <a href="/freelancer/{{ $freelancer->username }}">
                             {{ $freelancer->name }}
                         </a>
-                    </h2>
-                </div>
-                @if($index !== count($freelancers) - 1)
-                    <hr> <!-- Divider between employers -->
-                @endif
+                    </h3>
+
+                    <footer>
+                        {{$freelancer->bioExcerpt()}}
+                    </footer>
+                </article>
             @endforeach
         @else
             <p>No employers available.</p>

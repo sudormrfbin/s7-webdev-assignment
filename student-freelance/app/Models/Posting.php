@@ -12,4 +12,8 @@ class Posting extends Model
     public function employer() {
         return $this->belongsTo(Employer::class);
     }
+
+    public function descriptionExcerpt() {
+        return strtok($this->description, '.') . '.';
+    }
 }

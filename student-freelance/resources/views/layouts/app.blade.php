@@ -22,9 +22,6 @@
             </ul>
             <ul>
                 <li><a href="/postings">Browse Jobs</a></li>
-                <li><a href="/employers">Employers</a></li>
-                <li><a href="/freelancers">Freelancers</a></li>
-                <!-- Add more navigation links as needed -->
             </ul>
         </nav>
     </header>
@@ -35,5 +32,20 @@
     <main class="container">
         @yield('content')
     </main>
+
+    <hr/>
+
+    <footer class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/employers">Employers</a></li>
+                    <li><a href="/freelancers">Freelancers</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </footer>
+
 </body>
 

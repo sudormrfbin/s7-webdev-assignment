@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Freelancer extends Model
 {
     use HasFactory;
+
+    public function bioExcerpt() {
+        return strtok($this->bio, '.') . '.';
+    }
 }
