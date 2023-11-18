@@ -1,7 +1,7 @@
 <!-- resources/views/layouts/app.blade.php -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,10 @@
             <ul>
                 @auth('freelancer')
                 <li><a href="/postings">Browse Jobs</a></li>
+                @endauth
+
+                @auth('employer')
+                <li><a href="/freelancers">Hire Freelancers</a></li>
                 @endauth
 
                 @guest
@@ -59,6 +63,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/employers">Employers</a></li>
                     <li><a href="/freelancers">Freelancers</a></li>
+                    <li><a href="/postings">Postings</a></li>
                 </ul>
             </nav>
         </aside>
