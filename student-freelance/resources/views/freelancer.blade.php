@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1>{{ $freelancer->name }}</h1>
-        <p>{{ $freelancer->bio }}</p>
-    </div>
+    <h1>{{ $user->name }}</h1>
+    <p>{{ $user->bio }}</p>
 @endsection
