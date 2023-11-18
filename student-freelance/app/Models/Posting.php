@@ -9,6 +9,8 @@ class Posting extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function employer() {
         return $this->belongsTo(User::class);
     }

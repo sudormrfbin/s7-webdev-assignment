@@ -10,6 +10,9 @@
     <!-- Add your CSS files, meta tags, and other head elements here -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
+        textarea {
+            resize: vertical;
+        }
     </style>
 </head>
 
