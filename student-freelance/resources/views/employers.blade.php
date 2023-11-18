@@ -2,19 +2,20 @@
 
 @section('content')
     <div class="container">
-        <h1>List of Employers</h1>
+        <h1>Employers</h1>
         @if(count($employers) > 0)
-            @foreach($employers as $index => $employer)
-                <div class="employer">
-                    <h2>
+            @foreach($employers as $employer)
+                <article>
+                    <h3>
                         <a href="/employer/{{ $employer->username }}">
                             {{ $employer->name }}
                         </a>
-                    </h2>
-                </div>
-                @if($index !== count($employers) - 1)
-                    <hr> <!-- Divider between employers -->
-                @endif
+                    </h3>
+
+                    <footer>
+                        {{$employer->bioExcerpt()}}
+                    </footer>
+                </article>
             @endforeach
         @else
             <p>No employers available.</p>

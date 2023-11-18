@@ -8,53 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Freelancer Website</title>
     <!-- Add your CSS files, meta tags, and other head elements here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensure full viewport height */
-            margin: 0;
-        }
-
-        header {
-            background-color: #f2f2f2;
-            padding: 10px;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        header nav ul li {
-            margin-right: 10px;
-        }
-
-        main {
-            flex: 1; /* Allow content to grow */
-            padding: 20px; /* Add padding around the content */
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            margin-top: auto; /* Stick footer to the bottom */
-            width: 100%;
-        }
     </style>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header class="container">
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Work Freelance</a></li>
+            </ul>
+            <ul>
                 <li><a href="/postings">Browse Jobs</a></li>
                 <li><a href="/employers">Employers</a></li>
                 <li><a href="/freelancers">Freelancers</a></li>
@@ -63,15 +29,11 @@
         </nav>
     </header>
 
+    <hr/>
+
     <!-- Content Section -->
-    <main>
+    <main class="container">
         @yield('content')
     </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Your Freelancer Website</p>
-        <!-- Add footer content, links, etc. -->
-    </footer>
 </body>
 

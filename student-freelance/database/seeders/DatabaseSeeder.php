@@ -50,9 +50,9 @@ class SeedData
             'bio' => 'Microsoft Corporation is an American multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. Its best-known software products are the Microsoft Windows line of operating systems, the Microsoft Office suite, and the Internet Explorer and Edge web browsers. Its flagship hardware products are the Xbox video game consoles and the Microsoft Surface lineup of touchscreen personal computers.',
         ],
         [
-            'name' => 'Apple Inc.',
+            'name' => 'Apple',
             'username' => 'apple',
-            'bio' => 'Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services. The company is known for its hardware products like the iPhone smartphone, iPad tablet computer, Mac personal computer, Apple Watch, and Apple TV. Its software includes the iOS, macOS, iPadOS, watchOS, and tvOS operating systems, the iTunes media player, the Safari web browser, and various productivity and creativity apps.',
+            'bio' => 'Apple is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services. The company is known for its hardware products like the iPhone smartphone, iPad tablet computer, Mac personal computer, Apple Watch, and Apple TV. Its software includes the iOS, macOS, iPadOS, watchOS, and tvOS operating systems, the iTunes media player, the Safari web browser, and various productivity and creativity apps.',
         ],
         [
             'name' => 'Google LLC',
@@ -60,14 +60,14 @@ class SeedData
             'bio' => 'Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google is known for its search engine, but it offers a wide range of products and services, such as Google Ads, Google Cloud Platform, Google Workspace, Android operating system, Chrome web browser, and various hardware products like Pixel smartphones, Google Nest smart home devices, and more.',
         ],
         [
-            'name' => 'Amazon.com Inc.',
+            'name' => 'Amazon',
             'username' => 'amazon',
-            'bio' => 'Amazon.com Inc. is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry. Amazon is known for its online retail business, but it also operates Amazon Web Services (AWS), the world\'s largest cloud computing platform, and offers various hardware products like Amazon Kindle e-readers, Fire tablets, and Echo smart speakers.',
+            'bio' => 'Amazon is an American multinational technology company that focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry. Amazon is known for its online retail business, but it also operates Amazon Web Services (AWS), the world\'s largest cloud computing platform, and offers various hardware products like Amazon Kindle e-readers, Fire tablets, and Echo smart speakers.',
         ],
         [
-            'name' => 'Facebook, Inc.',
+            'name' => 'Facebook',
             'username' => 'facebook',
-            'bio' => 'Facebook, Inc. is an American social media conglomerate corporation. It is known for its various social networking services, including the Facebook platform, Instagram, WhatsApp, and Oculus VR. Facebook\'s platforms enable users to connect, share, discover, and communicate with others. The company also engages in hardware products like Oculus virtual reality headsets and Portal smart displays.',
+            'bio' => 'Facebook is an American social media conglomerate corporation. It is known for its various social networking services, including the Facebook platform, Instagram, WhatsApp, and Oculus VR. Facebook\'s platforms enable users to connect, share, discover, and communicate with others. The company also engages in hardware products like Oculus virtual reality headsets and Portal smart displays.',
         ],
     ];
 
