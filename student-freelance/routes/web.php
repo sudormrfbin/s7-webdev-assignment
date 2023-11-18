@@ -42,8 +42,19 @@ Route::get('/employers', function () {
 });
 
 Route::get('/user/{user:username}', function (User $user) {
-    return view('user', [
+    return redirect("/{$user->role}/{$user->username}");
+});
+
+Route::get('/freelancer/{user:username}', function (User $user) {
+    return view('freelancer', [
         'user' => $user,
+    ]);
+});
+
+Route::get('/employer/{user:username}', function (User $user) {
+    return view('employer', [
+        'user' => $user,
+        'postingsHistory' => $user->postingsHistory,
     ]);
 });
 
