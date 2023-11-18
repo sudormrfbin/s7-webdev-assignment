@@ -23,6 +23,14 @@ class DatabaseSeeder extends Seeder
                 'role' => UserRole::Freelancer,
             ]);
         }
+        User::factory()->create([
+            'name' => 'Gokul Soumya',
+            'username' => 'gokulsoumya',
+            'bio' => '',
+            'email' => 'gokulps15@gmail.com',
+            'password' => bcrypt('gokulps15@gmail.com'),
+            'role' => UserRole::Freelancer,
+        ]);
 
 
         foreach (SeedData::$softwareCompanies as $company) {
@@ -33,6 +41,14 @@ class DatabaseSeeder extends Seeder
                 'role' => UserRole::Employer,
             ]);
         }
+        User::factory()->create([
+            'name' => 'SCT College',
+            'username' => 'sctcollege',
+            'bio' => '',
+            'email' => 'sct@gmail.com',
+            'password' => bcrypt('sct@gmail.com'),
+            'role' => UserRole::Employer,
+        ]);
 
         foreach (SeedData::$jobPostings as $posting) {
             Posting::factory()->create([

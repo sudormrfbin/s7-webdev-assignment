@@ -26,15 +26,15 @@
             <ul>
                 @auth
                     @if (auth()->user()->role === 'freelancer')
-                        <li><a role="button" href="/postings">Browse Jobs</a></li>
+                        <li><a class="outline" role="button" href="/postings">Browse Jobs</a></li>
                     @else
-                        <li><a role="button" href="/posting">Create Job Posting</a></li>
+                        <li><a class="outline" role="button" href="/posting">Create Job Posting</a></li>
                     @endif
                 @endauth
 
                 @guest
-                    <li><a href="/login" role="button" class="outline">Login</a></li>
                     <li><a href="/register" role="button">Register</a></li>
+                    <li><a href="/login" role="button" class="outline">Login</a></li>
                 @endguest
 
                 @auth

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\PostingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
@@ -48,6 +49,7 @@ Route::get('/user/{user:username}', function (User $user) {
 Route::get('/freelancer/{user:username}', function (User $user) {
     return view('freelancer', [
         'user' => $user,
+        'applicationsHistory' => $user->applicationsHistory,
     ]);
 });
 
@@ -74,3 +76,5 @@ Route::post('register', [RegisterController::class, 'store'])->middleware(['gues
 // TODO: Add custom role middleware
 Route::get('posting', [PostingController::class, 'create']);
 Route::post('posting', [PostingController::class, 'store']);
+
+Route::post('apply', [ApplicationController::class, 'store']);
