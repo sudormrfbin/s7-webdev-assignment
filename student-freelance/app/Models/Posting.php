@@ -14,6 +14,6 @@ class Posting extends Model
     }
 
     public function descriptionExcerpt() {
-        return strtok($this->description, '.') . '.';
+        return strtok($this->description, '.');
     }
 }

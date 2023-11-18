@@ -9,7 +9,7 @@
         <p><strong>Budget:</strong> ${{ $posting->budget }}</p>
         <p>
             <strong>Posted by:</strong>
-            <a href="/employer/{{ $posting->employer->username }}">
+            <a href="/user/{{ $posting->employer->username }}">
                 {{ $posting->employer->name }}
             </a>
         </p>
