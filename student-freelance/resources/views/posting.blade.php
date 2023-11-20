@@ -13,6 +13,11 @@
         </a>
     </p>
 
+    @if ( auth()->check() && $posting->employer_id === auth()->user()->id )
+        <h3>Applicants</h3>
+        <x-user-list :users="$applicants"/>
+    @endif
+
     @if ( auth()->check() && auth()->user()->role === 'freelancer' )
         <?php
             $user = auth()->user();

@@ -33,6 +33,7 @@ Route::get('/postings', function () {
 Route::get('/posting/{posting}', function (Posting $posting) {
     return view('posting', [
         'posting' => $posting,
+        'applicants' => $posting->applicants,
     ]);
 });
 
