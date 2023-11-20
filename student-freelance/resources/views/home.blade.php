@@ -4,13 +4,20 @@
 
 @section('content')
     <section class="header">
-        <a href="freelance.html" class="worklogo"><img src="images/work2.png" alt=""></a>
         <div class="text-box">
-            <h1>Welcome to Work Freelance </h1>
-            <p>At Work Freelance, we're excited to bring
-                together exceptional freelancers and outstanding projects. Whether you're a skilled <br>professional
-                looking
-                for opportunities or a business seeking top-notch talent, you're in the right place.</p>
+            <div class="grid">
+                <div style="display: flex; align-items: left; justify-content: center; flex-direction: column;">
+                    <h1 style="text-align: left;">Welcome to Work Freelance </h1>
+                    <p>
+                        At Work Freelance, we're excited to bring together
+                        exceptional freelancers and outstanding projects.
+                        Whether you're a skilled professional looking for
+                        opportunities or a business seeking top-notch talent,
+                        you're in the right place.
+                    </p>
+                </div>
+                <img style="width: 50vw;" src="{{ asset('images/kitten.png') }}">
+            </div>
         </div>
     </section>
 
@@ -20,33 +27,29 @@
         <div class="grid">
             <article>
                 <h3>Jobs in IT</h3>
-                <footer>Make sure to replace 0.3s with the desired duration for the transition
-                    effect to occur smoothly. If this doesn't solve the issue, there might be other factors affecting
-                    the behavior,
-                    and additional details about your HTML and CSS structure would be helpful for further </footer>
+                <footer>
+                    Are you passionate about technology and innovation? Explore our curated listings for exciting opportunities in the vast landscape of Information Technology.
+                </footer>
             </article>
 
             <article>
                 <h3>Art</h3>
-                <footer>Make sure to replace 0.3s with the desired duration for the transition
-                    effect to occur smoothly. If this doesn't solve the issue, there might be other factors affecting
-                    the behavior,
-                    and additional details about your HTML and CSS structure would be helpful for further </footer>
+                <footer>
+                    Passionate about creativity and artistic expression? Dive into the diverse realm of art-related careers that embrace imagination, innovation, and craftsmanship.
+                </footer>
             </article>
 
             <article>
                 <h3>Photography</h3>
-                <footer>Make sure to replace 0.3s with the desired duration for the transition
-                    effect to occur smoothly. If this doesn't solve the issue, there might be other factors affecting
-                    the behavior,
-                    and additional details about your HTML and CSS structure would be helpful for further </footer>
+                <footer>
+                    Photography is an incredibly dynamic and expressive form of art and profession. It's a field that encapsulates a broad spectrum of styles, specialties, and opportunities for creative expression.
+                </footer>
             </article>
         </div>
     </div>
 
     <section class="hire">
         <h1>Hire for work</h1>
-        <img src="{{ asset('images/kitten.png') }}">
         <article>
             <p>
                 In the dynamic landscape of freelancing, our platform stands as a gateway to unparalleled hiring

@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Freelancer Website</title>
+    <title>Work Freelance</title>
     <!-- Add your CSS files, meta tags, and other head elements here -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
     <style>
         textarea {
             resize: vertical;
@@ -21,7 +22,7 @@
     <header class="container">
         <nav>
             <ul>
-                <li><a href="/">Work Freelance</a></li>
+                <li><a href="/"><img style="width: 50%;" src="{{ asset('images/freelance-logo.png') }}"></a></li>
             </ul>
             <ul>
                 @auth
@@ -44,7 +45,7 @@
         </nav>
     </header>
 
-    <hr />
+    <hr style="size: 10px;" />
 
     <main class="container">
         @yield('content')
